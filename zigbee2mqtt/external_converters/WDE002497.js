@@ -84,5 +84,14 @@ export default {
             valueStep: 5,
             zigbeeCommandOptions: {manufacturerCode: Zcl.ManufacturerCode.SCHNEIDER_ELECTRIC},
         }),
+        m.enumLookup({
+            name: 'control_type',
+            lookup: { on_off: 0x00, pi: 0x01, no_control: 0xFF },
+            cluster:'hvacThermostat',
+            attribute: {ID: 0xE213, type: Zcl.DataType.UINT8},
+            description: 'Control type',
+            entityCategory: 'config',
+            zigbeeCommandOptions: {manufacturerCode: Zcl.ManufacturerCode.SCHNEIDER_ELECTRIC},
+        })
     ]
 };
